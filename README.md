@@ -16,7 +16,7 @@ Given that the original authors, Xiao et al, never tested against any deep learn
 * Train each model for 20 epochs while using 10% of the training data in validation split
 * Evaluate each model
 
-For a more in-depth look at how these steps were accomplished, feel free to take a look at our [interactive notebook](AdvML_LeNet5.ipynb).
+For a more in-depth look at how these steps were accomplished, feel free to take a look at our [interactive notebook](AdvML_LeNet5_test.ipynb).
 
 ##### Results
 We made use of a 75/10/15 split for training, validation, and testing respectively.  After training each model for 20 epochs, we were able to achieve the following accuracies:
