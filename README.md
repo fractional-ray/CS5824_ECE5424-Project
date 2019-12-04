@@ -48,8 +48,9 @@ In order to replicate the papers parameters for random forest we use a prebuilt 
 ### Results
  We ran each test five times and took an average of the accuracy of the model our results are show in Table 1 (WILL CREATE TABLE AND INSERT A TABLE):
  
-n_estimater | depth | criterion | acc MNIST Fashion | MNIST
-        100    |  100  | gini     | 0.87582           | 0.9683
+	n_estimater | depth | criterion | acc MNIST Fashion | MNIST
+       ------------ | ----- | --------- | ----------------- | -----
+	100    |  100  | gini     | 0.87582           | 0.9683
         100    |  50   | gini     | 0.87686           | 0.9696
         10     |  50   | gini     | 0.85342           | 0.9486
         100    |  10   | gini     | 0.84352           | 0.94858
@@ -60,7 +61,7 @@ n_estimater | depth | criterion | acc MNIST Fashion | MNIST
 Tabel 1
 We also visualized some methods with a confusion matrix to visually represent the models performance.
 ![](./fig/gini_100_10_VAR.png)
- 
+![](./mnist_gini_100_10_VAR.png) 
  
  
 # Discussion
