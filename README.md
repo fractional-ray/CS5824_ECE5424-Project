@@ -39,29 +39,29 @@ From the above results, we see that the model performs worse on the Fashion-MNIS
 #### Random Forest
 In order to replicate the papers parameters for random forest we use a prebuilt Random Forest classifier from sklearn. We changed to corresponding parameters with the authors of the original paper.
  
-## Procedure
+##### Procedure
 * Import MNIST and Fashion Mnist and pre-process data with numpy
 * Train Random Forest with different parameters as seen in Table 1
 * Test and Train model with Sklearn Ensemble
 * Use Sklearn Accuracy_Score to evaluate performance
  
-### Results
+##### Results
  We ran each test five times and took an average of the accuracy of the model our results are show in Table 1 (WILL CREATE TABLE AND INSERT A TABLE):
  
 	n_estimater | depth | criterion | acc MNIST Fashion | MNIST
        ------------ | ----- | --------- | ----------------- | -----
-	100    |  100  | gini     | 0.87582           | 0.9683
-        100    |  50   | gini     | 0.87686           | 0.9696
-        10     |  50   | gini     | 0.85342           | 0.9486
-        100    |  10   | gini     | 0.84352           | 0.94858
-        100    | 10    | entropy  | 0.84564           | 0.94999
-        10     | 50    | entropy  | 0.85666           | 0.94878
-        100    | 50    | entropy  | 0.877           | 0.9688
-        100    | 100   | entropy  | 0.8775            | 0.9709
+	     100    |  100  | gini      | 0.87582           | 0.9683
+             100    |  50   | gini      | 0.87686           | 0.9696
+             10     |  50   | gini      | 0.85342           | 0.9486
+             100    |  10   | gini      | 0.84352           | 0.94858
+             100    |  10   | entropy   | 0.84564           | 0.94999
+             10     |  50   | entropy   | 0.85666           | 0.94878
+             100    |  50   | entropy   | 0.877             | 0.9688
+             100    |  100  | entropy   | 0.8775            | 0.9709
 Tabel 1
 We also visualized some methods with a confusion matrix to visually represent the models performance.
 ![](./fig/gini_100_10_VAR.png)
-![](./mnist_gini_100_10_VAR.png) 
+![](./fig/mnist_gini_100_10_VAR.png) 
  
  
 # Discussion
