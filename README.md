@@ -33,7 +33,8 @@ We made use of a 75/10/15 split for training, validation, and testing respective
  
 From the above results, we see that the model performs worse on the Fashion-MNIST dataset than it does on the MNIST dataset. This confirms our hypothesis in which the CNN would do worse on Fashion MNIST. Our results also illustrate that neither model has overfit the data due to the relatively high validation accuracy in comparison to their respective test set accuracies. 
  
-[TODO add figs to github]
+![](./fig/model_accuracy.png)
+![](./fig/model_loss.png) 
 
 
 #### Random Forest
