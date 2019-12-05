@@ -69,24 +69,20 @@ In order to replicate the papers parameters for random forest we use a prebuilt 
 * Use Sklearn Accuracy_Score to evaluate performance
 
 ##### Results
- We ran each test five times and took an average of the accuracy of the model our results are show in Table 1 (WILL CREATE TABLE AND INSERT A TABLE):
-
-|	n_estimater | depth | criterion | acc MNIST Fashion | MNIST|
-|       --- | --- | --- | --- | --- |
-|	     100    |  100  | gini      | 0.87582           | 0.9683|
-|             100    |  50   | gini      | 0.87686           | 0.9696|
-|             10     |  50   | gini      | 0.85342           | 0.9486|
-|             100    |  10   | gini      | 0.84352           | 0.94858|
-|             100    |  10   | entropy   | 0.84564           | 0.94999|
-|             10     |  50   | entropy   | 0.85666           | 0.94878|
-|             100    |  50   | entropy   | 0.877             | 0.9688|
-|             100    |  100  | entropy   | 0.8775            | 0.9709|
-Table 1
-
-We also visualized some methods with a confusion matrix to visually represent the models performance.
-
-
-
+ We ran each test five times and took an average of the accuracy of the model our results are shown in Table 1:
+ 
+n_estimater | depth | criterion | acc MNIST Fashion | MNIST
+        100    |  100  | gini     | 0.87582           | 0.9683
+        100    |  50   | gini     | 0.87686           | 0.9696
+        10     |  50   | gini     | 0.85342           | 0.9486
+        100    |  10   | gini     | 0.84352           | 0.94858
+        100    | 10    | entropy  | 0.84564           | 0.94999
+        10     | 50    | entropy  | 0.85666           | 0.94878
+        100    | 50    | entropy  | 0.877           | 0.9688
+        100    | 100   | entropy  | 0.8775            | 0.9709
+Tabel 2
+We also visualized some methods with a confusion matrix to visually represent the models performance. From the Fashion MNIST dataset we have:
+ 
 | Label | Description |
 | --- | --- |
 | 0 | T-shirt/top |
@@ -99,10 +95,14 @@ We also visualized some methods with a confusion matrix to visually represent th
 | 7 | Sneaker |
 | 8 | Bag |
 | 9 | Ankle boot |
-
+ 
+In order to read the confusion matrix as cells get darker that means the model made a classification rate.  For a perfect classification we will see dark cells down the diagonal, we can see that with the MNIST dataset we have greater success than the Fashion MNIST dataset. 
 
 ![](./fig/gini_100_10_VAR.png)
 ![](./fig/mnist_gini_100_10_VAR.png)
+
+From the confusion matrix it seems that the Random Forest Tree with gini and trained with Fashion Mnist dataset misclassified pullover, dress, and coats.
+Our implementation of the Random Forest produced similar results to the original authors, Xiao et al. An improvement that could be made is in the pre-processing step show in the paper Using Random Forests for Handwritten Digit Recognition.  S. Bernard and colleagues experiment with feature extraction with picking the best Random Forest Tree. The authors propose a preprocessing step to extract more features by taking grayscale mean values based on four resolution levels of the images, taking this into consideration could help improve performance.
 
 
 # Discussion
