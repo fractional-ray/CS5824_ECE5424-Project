@@ -6,6 +6,29 @@ The authors of “Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine 
 # Model
 
 #### SVM
+Xiao et al showed that out of all the classifiers they explored using the Fashion-MNIST dataset, support vector classifiers (SVCs) were able to obtain the highest accuracy. By changing the regularization parameter, C, and the type of kernel used, accuracies from 70.3% to 89.7% were reported for the Fashion-MNIST dataset. Because this type of classifier was shown by Xiao et al to be the most accurate when applied to the Fashion-MNIST dataset, it is important to attempt to reproduce the results using SVCs to validate the authors’ claim. An evaluation of the accuracy of the SVCs will also be done using the original MNIST dataset to determine the difference in difficulty of classification between the two datasets. 
+ 
+##### Procedure 
+* Import MNIST and Fashion-MNIST datasets using the Keras deep learning library
+* Reshape, shuffle, and split the data sets to allow for input into an SVC. 60,000 examples will be used in the training set while the remaining 10,000 will be used for testing.
+* Normalize the intensity values of the images to [0,1] by dividing each value by 255, the maximum intensity value.
+* Create an SVC for each dataset using the scikit-learn library, specifying C and kernel type with an “auto” gamma value.
+* Fit the SVC models to the training data for each dataset respectively. 
+* Compute the accuracy of the trained models on the data set aside for testing. 
+* Repeat above steps for the top 4 performing parameters as well as the worst performing parameters given by the author. 
+ 
+These steps can be seen and executed using [this notebook](MNIST_FASHION_SVM.ipynb).
+ 
+### Results
+![](./fig/Results_SVM.png)
+ 
+The table above shows the average results of two trials of each SVC and the parameters specified for each model. It can be noted that every experimental trial except for the sigmoid example is less accurate than the expected results from Xiao et al. This could be due to the authors specifying different parameters that were not published or a difference in version number of libraries being used. However, the worst performing SVC as indicated by Xiao et al showed better performance in our implementation.  The best performing model from Xiao et al used a C value of 10 and a polynomial kernel. However this turned out to be the worst performing model in our experimental trials. For our implementation, the most accurate SVC had a C value of 100 and used a radial basis function kernel to achieve 89.2% accuracy on the Fashion-MNIST dataset, just 0.5% less than the most accurate SVC results from Xiao et al. 
+ 
+### Discussion
+Looking deeper into the data shared on the author’s gitHub repository, it was discovered that the SVC results shown were the average of only two executions of each set of parameters, originally stated as the average of 5 trials. This is most likely due to the long training times for the SVCs. The training times for an SVC on the Fashion-MNIST dataset ranged from 56 minutes up to 50 hours, with a median of around one hour and fifteen minutes. Because an SVM model is a quadratic programming problem at its core, the training time will scale with the cube of the number of training vectors (O(k3)) as discussed by H.P. Graf et al. These long training times are expected and also why others, such as H.P. Graf et al, are searching for ways to speed up the training of SVMs. Because of this, the results were limited to 2 trails for each model as training time on the machine used was generally consistent with the median of the results given by Xiao et al. 
+ 
+Overall, the SVC implementation of the Fashion-MNIST dataset was successful with some discrepancies in the variation of the results with respect to the set parameters. However, the created SVC was able to attain a maximum accuracy of 89.2% on  the Fashion-MNIST dataset. Also, it was proven that the Fashion-MNIST was more of a challenge for SVCs as each model created was 9.72% more accurate on average when trained on the original MNIST dataset. 
+
 #### CNN
 Given that the original authors, Xiao et al, never tested against any deep learning models, we decided this would be the perfect opportunity to test the core hypothesis of the paper. Convolutional neural networks (CNN) are well poised to tackle image classification problems such as Fashion-MNIST & MNIST. For the sake of simplicity, we made use of Tensorflow’s Keras package to import both datasets and build the LeNet-5 CNN architecture.
 
