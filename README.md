@@ -64,15 +64,15 @@ In order to replicate the papers parameters for random forest we use a prebuilt 
 
 
 | n_estimater | depth | criterion | acc MNIST Fashion | MNIST |
-| ---        | ---    | ---      | ---              |    ---    |
-    |    100    |  100  | gini     | 0.872             | 0.970 |
-    |    100    |  50   | gini     | 0.871           | 0.971 |
-    |    10     |  50   | gini     | 0.848             | 0.948 |
-    |    100    |  10   | gini     | 0.835           | 0.949 |
-    |    100    | 10    | entropy  | 0.838           | 0.950 |
-    |    10     | 50    | entropy  | 0.852             | 0.949 |
-    |    100    | 50    | entropy  | 0.872           | 0.969  |
-    |    100    | 100   | entropy  | 0.873             | 0.970  |
+| ---        | ---    | ---      | ---             |    ---    |
+|    100    |  100  | gini     | 0.872             | 0.970 |
+|    100    |  50   | gini     | 0.871           | 0.971 |
+|    10     |  50   | gini     | 0.848             | 0.948 |
+|    100    |  10   | gini     | 0.835           | 0.949 |
+|    100    | 10    | entropy  | 0.838           | 0.950 |
+|    10     | 50    | entropy  | 0.852             | 0.949 |
+|    100    | 50    | entropy  | 0.872           | 0.969  |
+|    100    | 100   | entropy  | 0.873             | 0.970  |
                 Table 1
  
  
