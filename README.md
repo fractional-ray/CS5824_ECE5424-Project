@@ -60,10 +60,11 @@ From the above results, we see that the model performs worse on the Fashion-MNIS
 
 
 #### Random Forest
-#### Random Forest
 In order to replicate the papers parameters for random forest we use a prebuilt Random Forest classifier from sklearn. We changed the parameters n_stimaters, depth and criterion. in the paper the authors obtained the following results: 
+
+
 | n_estimater | depth | criterion | acc MNIST Fashion | MNIST |
-| ---        | ---    | ---      | ---              |        |
+| ---        | ---    | ---      | ---              |    ---    |
     |    100    |  100  | gini     | 0.872             | 0.970 |
     |    100    |  50   | gini     | 0.871           | 0.971 |
     |    10     |  50   | gini     | 0.848             | 0.948 |
@@ -94,7 +95,9 @@ In order to replicate the papers parameters for random forest we use a prebuilt 
 |        10     | 50    | entropy  | 0.85666           | 0.94878 | 
 |        100    | 50    | entropy  | 0.877           | 0.9688 |
 |        100    | 100   | entropy  | 0.8775            | 0.9709 |
+
 Tabel 2
+
 We also visualized some methods with a confusion matrix to visually represent the models performance. From the Fashion MNIST dataset we have:
  
 | Label | Description |
