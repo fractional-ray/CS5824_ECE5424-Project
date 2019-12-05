@@ -59,7 +59,25 @@ In order to replicate the papers parameters for random forest we use a prebuilt 
              100    |  50   | entropy   | 0.877             | 0.9688
              100    |  100  | entropy   | 0.8775            | 0.9709
 Table 1
+
 We also visualized some methods with a confusion matrix to visually represent the models performance.
+
+
+
+| Label | Description |
+| --- | --- |
+| 0 | T-shirt/top |
+| 1 | Trouser |
+| 2 | Pullover |
+| 3 | Dress |
+| 4 | Coat |
+| 5 | Sandal |
+| 6 | Shirt |
+| 7 | Sneaker |
+| 8 | Bag |
+| 9 | Ankle boot |
+
+
 ![](./fig/gini_100_10_VAR.png)
 ![](./fig/mnist_gini_100_10_VAR.png)
 
