@@ -73,7 +73,6 @@ In order to replicate the papers parameters for random forest we use a prebuilt 
 |    10     | 50    | entropy  | 0.852             | 0.949 |
 |    100    | 50    | entropy  | 0.872           | 0.969  |
 |    100    | 100   | entropy  | 0.873             | 0.970  |
-                Table 1
  
  
 ## Procedure
@@ -83,7 +82,7 @@ In order to replicate the papers parameters for random forest we use a prebuilt 
 * Use Sklearn Accuracy_Score to evaluate performance
  
 ### Results
- We ran each test five times and took an average of the accuracy of the model our results are shown in Table 1:
+ We ran each test five times and took an average of the accuracy of the model our results are shown below:
  
 |n_estimater | depth | criterion | acc MNIST Fashion | MNIST |
 |---         | ---    | ---       | ---               | --- |
@@ -96,7 +95,6 @@ In order to replicate the papers parameters for random forest we use a prebuilt 
 |        100    | 50    | entropy  | 0.877           | 0.9688 |
 |        100    | 100   | entropy  | 0.8775            | 0.9709 |
 
-Tabel 2
 
 We also visualized some methods with a confusion matrix to visually represent the models performance. From the Fashion MNIST dataset we have:
  
