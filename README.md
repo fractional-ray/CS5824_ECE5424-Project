@@ -30,7 +30,7 @@ Looking deeper into the data shared on the author’s gitHub repository, it was 
 Overall, the SVC implementation of the Fashion-MNIST dataset was successful with some discrepancies in the variation of the results with respect to the set parameters. However, the created SVC was able to attain a maximum accuracy of 89.2% on  the Fashion-MNIST dataset. Also, it was proven that the Fashion-MNIST was more of a challenge for SVCs as each model created was 9.72% more accurate on average when trained on the original MNIST dataset. 
 
 #### CNN
-Given that the original authors, Xiao et al, never tested against any deep learning models, we decided this would be the perfect opportunity to test the core hypothesis of the paper. Convolutional neural networks (CNN) are well poised to tackle image classification problems such as Fashion-MNIST & MNIST. For the sake of simplicity, we made use of Tensorflow’s Keras package to import both datasets and build the LeNet-5 CNN architecture.
+Given that the original authors, Xiao et al, never tested against any deep learning models, we decided this would be the perfect opportunity to test the core hypothesis of the paper. Convolutional neural networks (CNN) are well-posed to tackle image classification problems such as Fashion-MNIST & MNIST. For example, if you were to take a look at any of the top performing algorithms on CIFAR-100 or the ImageNet challenge, you would see some form of CNN.[6] However, even with all the many upsides of using CNNs for image classification, there is a cost to pay in regards to compute. To circumvent this hurdle, we made use of the Google Collaboratory platform to train and evaluate our model to avoid long training times due to the fact that they provide free GPU and TPU resources. We made use of Tensorflow’s Keras package to import both datasets and build the LeNet-5 CNN architecture.
 
 ##### Procedure
 * Import MNIST and Fashion-MNIST datasets
@@ -69,20 +69,24 @@ In order to replicate the papers parameters for random forest we use a prebuilt 
 * Use Sklearn Accuracy_Score to evaluate performance
 
 ##### Results
- We ran each test five times and took an average of the accuracy of the model our results are shown in Table 1:
- 
-n_estimater | depth | criterion | acc MNIST Fashion | MNIST
-        100    |  100  | gini     | 0.87582           | 0.9683
-        100    |  50   | gini     | 0.87686           | 0.9696
-        10     |  50   | gini     | 0.85342           | 0.9486
-        100    |  10   | gini     | 0.84352           | 0.94858
-        100    | 10    | entropy  | 0.84564           | 0.94999
-        10     | 50    | entropy  | 0.85666           | 0.94878
-        100    | 50    | entropy  | 0.877           | 0.9688
-        100    | 100   | entropy  | 0.8775            | 0.9709
-Tabel 2
-We also visualized some methods with a confusion matrix to visually represent the models performance. From the Fashion MNIST dataset we have:
- 
+ We ran each test five times and took an average of the accuracy of the model our results are show in Table 1 (WILL CREATE TABLE AND INSERT A TABLE):
+
+|	n_estimater | depth | criterion | acc MNIST Fashion | MNIST|
+|       --- | --- | --- | --- | --- |
+|	     100    |  100  | gini      | 0.87582           | 0.9683|
+|             100    |  50   | gini      | 0.87686           | 0.9696|
+|             10     |  50   | gini      | 0.85342           | 0.9486|
+|             100    |  10   | gini      | 0.84352           | 0.94858|
+|             100    |  10   | entropy   | 0.84564           | 0.94999|
+|             10     |  50   | entropy   | 0.85666           | 0.94878|
+|             100    |  50   | entropy   | 0.877             | 0.9688|
+|             100    |  100  | entropy   | 0.8775            | 0.9709|
+Table 1
+
+We also visualized some methods with a confusion matrix to visually represent the models performance.
+
+
+
 | Label | Description |
 | --- | --- |
 | 0 | T-shirt/top |
@@ -95,16 +99,24 @@ We also visualized some methods with a confusion matrix to visually represent th
 | 7 | Sneaker |
 | 8 | Bag |
 | 9 | Ankle boot |
- 
-In order to read the confusion matrix as cells get darker that means the model made a classification rate.  For a perfect classification we will see dark cells down the diagonal, we can see that with the MNIST dataset we have greater success than the Fashion MNIST dataset. 
+
 
 ![](./fig/gini_100_10_VAR.png)
 ![](./fig/mnist_gini_100_10_VAR.png)
 
-From the confusion matrix it seems that the Random Forest Tree with gini and trained with Fashion Mnist dataset misclassified pullover, dress, and coats.
-Our implementation of the Random Forest produced similar results to the original authors, Xiao et al. An improvement that could be made is in the pre-processing step show in the paper Using Random Forests for Handwritten Digit Recognition.  S. Bernard and colleagues experiment with feature extraction with picking the best Random Forest Tree. The authors propose a preprocessing step to extract more features by taking grayscale mean values based on four resolution levels of the images, taking this into consideration could help improve performance.
-
-
-# Discussion
-
 # Conclusion
+In general, our results show that the Fashion-MNIST dataset is indeed more difficult of a machine learning task than the original MNIST dataset. Each of the three classifiers explored in this project prove that, using the same parameters, the Fashion-MNIST dataset achieves a lower accuracy than the  MNIST dataset, on average about ~10% lower. 
+
+# References
+ 
+[1] S. Bernard, S. Adam, and L. Heutte: Using Random Forests for Handwritten Digit Recognition, Ninth International Conference on Document Analysis and Recognition, September 2007
+ 
+[2] Y. LeCun, L. Bottou, Y. Bengio, and P. Haffner: Gradient-based learning applied to document recognition. Proceedings of the IEEE, November 1998
+ 
+[3] H. Xiao, K. Rasul, R. Vollgraf: Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms
+ 
+[4] H.P. Graf et al: Parallel Support Vector Machines: The Cascade SVM. Advances in Neural Information Processing Systems, 2005.
+ 
+[5] Scikit-lean: Machine Learning in Python, Pedregosa et al., JMLR 12, pp. 2825-2830, 2011
+ 
+[6] Papers With Code : Image Classification. (2011). Retrieved December 5, 2019, from Paperswithcode.com website: https://paperswithcode.com/task/image-classification
