@@ -3,7 +3,7 @@
 The authors of “Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms” set out to create a dataset to rival the most widely used public dataset for machine learning, the MNIST dataset. They believe that the MNIST dataset, which is comprised of 7,000 pre-processed images of handwritten digits, is too simple of a machine learning task as accuracies of 99.7% can now be achieved. The Fashion-MNIST dataset is unique as it contains the same number of examples with the same image format along with the same number of possible classes as the MNIST dataset. Therefore, this new dataset can be easily integrated into any machine learning framework as most already support MNIST with included helper functions and examples. The paper to be investigated proves that the Fashion-MNIST dataset is more of a challenge to classify than the original MNIST dataset, achieving a maximum test accuracy of 89.7%. To do so, the authors present a number of machine learning algorithms, each with multiple examples using different parameter values, and present an average testing accuracy over 5 trials of randomly shuffled data for each classifier. The results are also compared to the corresponding benchmark accuracies for the MNIST dataset.
 
 
-# Model
+# Models
 
 #### SVM
 Xiao et al showed that out of all the classifiers they explored using the Fashion-MNIST dataset, support vector classifiers (SVCs) were able to obtain the highest accuracy. By changing the regularization parameter, C, and the type of kernel used, accuracies from 70.3% to 89.7% were reported for the Fashion-MNIST dataset. Because this type of classifier was shown by Xiao et al to be the most accurate when applied to the Fashion-MNIST dataset, it is important to attempt to reproduce the results using SVCs to validate the authors’ claim. An evaluation of the accuracy of the SVCs will also be done using the original MNIST dataset to determine the difference in difficulty of classification between the two datasets. 
@@ -19,12 +19,12 @@ Xiao et al showed that out of all the classifiers they explored using the Fashio
  
 These steps can be seen and executed using [this notebook](MNIST_FASHION_SVM.ipynb).
  
-### Results
+##### Results
 ![](./fig/Results_SVM.png)
  
 The table above shows the average results of two trials of each SVC and the parameters specified for each model. It can be noted that every experimental trial except for the sigmoid example is less accurate than the expected results from Xiao et al. This could be due to the authors specifying different parameters that were not published or a difference in version number of libraries being used. However, the worst performing SVC as indicated by Xiao et al showed better performance in our implementation.  The best performing model from Xiao et al used a C value of 10 and a polynomial kernel. However this turned out to be the worst performing model in our experimental trials. For our implementation, the most accurate SVC had a C value of 100 and used a radial basis function kernel to achieve 89.2% accuracy on the Fashion-MNIST dataset, just 0.5% less than the most accurate SVC results from Xiao et al. 
  
-### Discussion
+##### Discussion
 Looking deeper into the data shared on the author’s gitHub repository, it was discovered that the SVC results shown were the average of only two executions of each set of parameters, originally stated as the average of 5 trials. This is most likely due to the long training times for the SVCs. The training times for an SVC on the Fashion-MNIST dataset ranged from 56 minutes up to 50 hours, with a median of around one hour and fifteen minutes. Because an SVM model is a quadratic programming problem at its core, the training time will scale with the cube of the number of training vectors (O(k3)) as discussed by H.P. Graf et al. These long training times are expected and also why others, such as H.P. Graf et al, are searching for ways to speed up the training of SVMs. Because of this, the results were limited to 2 trails for each model as training time on the machine used was generally consistent with the median of the results given by Xiao et al. 
  
 Overall, the SVC implementation of the Fashion-MNIST dataset was successful with some discrepancies in the variation of the results with respect to the set parameters. However, the created SVC was able to attain a maximum accuracy of 89.2% on  the Fashion-MNIST dataset. Also, it was proven that the Fashion-MNIST was more of a challenge for SVCs as each model created was 9.72% more accurate on average when trained on the original MNIST dataset. 
