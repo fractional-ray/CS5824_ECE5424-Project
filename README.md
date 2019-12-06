@@ -112,7 +112,7 @@ We also visualized some results with a confusion matrix to visually represent th
 | 8 | Bag |
 | 9 | Ankle boot |
  
-For a perfect classification example, the confusion matrix below would show dark blue along the diagonal with all other spaces showing only white. With this in mind, one can see that the MNIST dataset we have greater success than the Fashion MNIST dataset. 
+For a perfect classification example, the confusion matrix below would show dark blue along the diagonal with all other spaces showing only white. With this in mind, one can see that the model was more successful at classifying the MNIST dataset than it was for the Fashion-MNIST dataset. 
 
 
 ![](./fig/gini_100_10_VAR.png)
