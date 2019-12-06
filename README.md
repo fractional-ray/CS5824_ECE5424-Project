@@ -118,13 +118,13 @@ For a perfect classification example, the confusion matrix below would show dark
 ![](./fig/gini_100_10_VAR.png)
 ![](./fig/mnist_gini_100_10_VAR.png)
 
+The Random Forest classifier using a gini index and trained with Fashion-MNIST dataset misclassified pullover, dress, and coats the most. However, the same classifier performed better on the MNIST dataset, nearly classified the testing data perfectly, as seen with only a few shaded spaces outside of the diagonal.
 
-From the confusion matrix it seems that the Random Forest Tree with gini and trained with Fashion-MNIST dataset misclassified pullover, dress, and coats the most.
-Our implementation of the Random Forest produced similar results to the original authors, Xiao et al. An improvement that could be made is in the pre-processing step show in the paper Using Random Forests for Handwritten Digit Recognition.  S. Bernard and colleagues experiment with feature extraction with picking the best Random Forest Tree. The authors propose a preprocessing step to extract more features by taking grayscale mean values based on four resolution levels of the images, taking this into consideration could help improve performance.
+Our implementation of the Random Forest classifier produced similar results to the original authors Xiao et al. An improvement that could be made is including a the pre-processing like that shown in the paper Using Random Forests for Handwritten Digit Recognition.  S. Bernard and colleagues experiment with feature extraction for picking the best Random Forest Tree. The authors propose a preprocessing step to extract more features by taking grayscale mean values based on four resolution levels of the images. Taking this into consideration could help improve performance of the random forests used to classify the fashion-MNIST dataset. [1]
 
 
 # Conclusion
-In general, our results show that the Fashion-MNIST dataset is indeed more difficult of a machine learning task than the original MNIST dataset. Each of the three classifiers explored in this project prove that, using the same parameters, the Fashion-MNIST dataset achieves a lower accuracy than the  MNIST dataset, on average about ~10% lower. 
+In general, our results show that the Fashion-MNIST dataset is indeed a more difficult machine learning task than the original MNIST dataset. Each of the three classifiers explored in this project prove the Fashion-MNIST dataset can achieve on average a ~10% lower accuracy than the  MNIST dataset. It was also proven that a maximum accuracy of any of the proposed ML classifiers was ~89%, which can be obtained using a SVC or CNN. 
 
 
 # References
